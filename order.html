@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -41,30 +41,27 @@
     </section>
     <!-- Sekcja Navbar sie konczy -->
 
-    <!-- Sekcja wyszukiwania -->
+    <!-- Sekcja formularza -->
     <section class="food-search">
       <div class="container">
-        <h2 class="text-center text-white">
-          Fill this form to confirm your order.
-        </h2>
+        <h2 class="text-center text-white">Twoje Zamówienie</h2>
 
         <form action="#" class="order">
           <fieldset>
-            <legend>Selected Food</legend>
+            <legend>Wybrane Jedzenie</legend>
 
             <div class="food-menu-img">
               <img
-                src="images/menu-pizza.jpg"
-                alt="Chicke Hawain Pizza"
+                src="images/menu-pizza1.jpeg"
+                alt="Pizza"
                 class="img-responsive img-curve"
               />
             </div>
 
             <div class="food-menu-desc">
-              <h3>Food Title</h3>
-              <p class="food-price">$2.3</p>
-
-              <div class="order-label">Quantity</div>
+              <h3>Pizza Capriciosa</h3>
+              <p class="food-price">20,99 zł</p>
+              <div class="order-label">Ilość</div>
               <input
                 type="number"
                 name="qty"
@@ -76,21 +73,21 @@
           </fieldset>
 
           <fieldset>
-            <legend>Delivery Details</legend>
-            <div class="order-label">Full Name</div>
+            <legend>Szczegóły Zamówienia</legend>
+            <div class="order-label">Imię i nazwisko</div>
             <input
               type="text"
               name="full-name"
-              placeholder="E.g. Vijay Thapa"
+              placeholder=""
               class="input-responsive"
               required
             />
 
-            <div class="order-label">Phone Number</div>
+            <div class="order-label">Numer Telefonu</div>
             <input
               type="tel"
               name="contact"
-              placeholder="E.g. 9843xxxxxx"
+              placeholder=""
               class="input-responsive"
               required
             />
@@ -99,16 +96,16 @@
             <input
               type="email"
               name="email"
-              placeholder="E.g. hi@vijaythapa.com"
+              placeholder=""
               class="input-responsive"
               required
             />
 
-            <div class="order-label">Address</div>
+            <div class="order-label">Adres</div>
             <textarea
               name="address"
               rows="10"
-              placeholder="E.g. Street, City, Country"
+              placeholder="ulica, kod pocztowy, miejscowość"
               class="input-responsive"
               required
             ></textarea>
@@ -116,7 +113,7 @@
             <input
               type="submit"
               name="submit"
-              value="Confirm Order"
+              value="Potwierdź Zamówienie"
               class="btn btn-primary"
             />
           </fieldset>
@@ -127,7 +124,7 @@
 
     <!-- Sekcja social -->
     <section class="social">
-      <div class="container text-center">
+      <div class="container-order text-center">
         <ul>
           <li>
             <a href="#"><img src="/images/facebook.png" alt="Facebook" /></a>

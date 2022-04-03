@@ -24,6 +24,9 @@
 .text-white {
   color: white;
 }
+.margin-top {
+  margin-top: 2%;
+}
 .clearfix {
   clear: both;
   float: none;
@@ -66,7 +69,7 @@ h3 {
   bottom: 50px;
   left: 40%;
 }
-fieldset{
+fieldset {
   border: 1px solid white;
   margin: 5%;
   padding: 3%;
@@ -75,11 +78,11 @@ fieldset{
 
 /* CSS dla Navbaru */
 .logo {
-  width: 12%;
+  width: 9%;
   float: left;
 }
 .menu {
-  line-height: 50px;
+  line-height: 60px;
 }
 .menu ul {
   list-style-type: none;
@@ -92,7 +95,7 @@ fieldset{
 
 /* CSS dla wyszukiwania jedzenia */
 .food-search {
-  background-image: url(../images/bg.jpg);
+  background-image: url(../images/bg1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -115,10 +118,15 @@ fieldset{
   float: left;
   margin: 2%;
 }
+.categories-section {
+  padding: 4% 0;
+  background-color: #ececec;
+}
+
 /* CSS dla menu */
 .food-menu {
   background-color: #ececec;
-  padding: 4% 0;
+  padding: 5% 0;
 }
 .food-menu-box {
   width: 43%;
@@ -127,6 +135,11 @@ fieldset{
   float: left;
   background-color: white;
   border-radius: 15px;
+}
+.food-menu-title {
+  text-align: center;
+  font-size: 3rem;
+  padding: 2%;
 }
 .food-menu-img {
   width: 20%;
@@ -146,6 +159,33 @@ fieldset{
   color: #747d8c;
 }
 
+/* CSS dla kontaktu */
+.contact-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 3%;
+}
+.contact-info-item {
+  background-color: #ececec;
+  padding: 4%;
+  text-align: center;
+  border-radius: 12px;
+  width: 45%;
+}
+.contact-info-icon {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+.contact-info-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
 /* CSS dla sociali */
 .social ul {
   list-style-type: none;
@@ -154,13 +194,17 @@ fieldset{
   display: inline;
   padding: 1%;
 }
+.container-order {
+  width: 80%;
+  margin: 7% auto;
+}
 
 /* CSS dla zamowienia */
-.order{
+.order {
   width: 50%;
   margin: 0 auto;
 }
-.input-responsive{
+.input-responsive {
   width: 96%;
   padding: 1%;
   margin-bottom: 3%;
@@ -168,8 +212,8 @@ fieldset{
   border-radius: 5px;
   font-size: 1rem;
 }
-.order-label{
-  margin-bottom: 1%; 
+.order-label {
+  margin-bottom: 1%;
   font-weight: bold;
 }
 
@@ -215,5 +259,8 @@ fieldset{
   }
   .social {
     padding: 5% 0;
+  }
+  .order {
+    width: 90%;
   }
 }
