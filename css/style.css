@@ -162,7 +162,6 @@ fieldset {
 /* CSS dla kontaktu */
 .contact-wrapper {
   display: flex;
-  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
@@ -196,7 +195,8 @@ fieldset {
 }
 .container-order {
   width: 80%;
-  margin: 7% auto;
+  margin: 0 auto;
+  padding: 1%;
 }
 
 /* CSS dla zamowienia */
