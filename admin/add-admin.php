@@ -66,16 +66,16 @@ if (isset($_POST['submit'])) {
   // Zapisanie danych do bazy i polaczenie z baza w menu includem
   // Dodanie danych do bazy
   $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
   // Sprawdzenie czy dane są dodane czy nie
   if ($res == TRUE) {
     // Dane dodane
-    $_SESSION['add'] = "Admin Added Successfully";
+    $_SESSION['add'] = "<div class='success'> Admin dodany prawidlowo </div>";
     // Przekierowanie do manage admin
     header("location:" . SITEURL . 'admin/manage-admin.php');
   } else {
     // Nie dodano danych
-    // Dane dodane
-    $_SESSION['add'] = "Failed to add admin";
+    $_SESSION['add'] = "<div class='error'>Admin nie dodany prawidlowo </div>";
     // Przekierowanie do add admin
     header("location:" . SITEURL . 'admin/add-admin.php');
   }
