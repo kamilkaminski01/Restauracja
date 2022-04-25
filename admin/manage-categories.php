@@ -23,39 +23,66 @@
     <table class="tbl-full">
       <tr>
         <th>nr</th>
-        <th>Full Name</th>
-        <th>Username</th>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Featured</th>
+        <th>Active</th>
         <th>Actions</th>
       </tr>
+      <?php
+        $sql = "SELECT * FROM categories";
+        $res = mysqli_query($conn, $sql);
 
-      <tr>
-        <td>1. </td>
-        <td>Kamil Kaminski</td>
-        <td>kamilkaminski</td>
-        <td>
-          <a href="#" class="btn-secondary">Update Admin</a>
-          <a href="#" class="btn-danger">Delete Admin</a>
-        </td>
-      </tr>
-      <tr>
-        <td>1. </td>
-        <td>Kamil Kaminski</td>
-        <td>kamilkaminski</td>
-        <td>
-          <a href="#" class="btn-secondary">Update Admin</a>
-          <a href="#" class="btn-danger">Delete Admin</a>
-        </td>
-      </tr>
-      <tr>
-        <td>1. </td>
-        <td>Kamil Kaminski</td>
-        <td>kamilkaminski</td>
-        <td>
-          <a href="#" class="btn-secondary">Update Admin</a>
-          <a href="#" class="btn-danger">Delete Admin</a>
-        </td>
-      </tr>
+        $count = mysqli_num_rows($res);
 
+        $p = 1;
+
+        if($count>0){
+          while($row = mysqli_fetch_assoc($res)){
+            $id = $row['id'];
+            $title = $row['title'];
+            $image_name = $row['image_name'];
+            $featured = $row['featured'];
+            $active = $row['active'];
+      ?>
+            <tr>
+              <td><?php echo $p++;?></td>
+              <td><?php echo $title;?></td>
+
+              <td>
+                <?php
+                  // Sprawdzenie czy zdjecie jest dostepne
+                  if ($image_name != "")
+                  {
+                    ?>
+                    <img src="<?php echo SITEURL;?>images/<?php echo $image_name;?>" width="100px">
+                    <?php
+                  }
+                  else{
+                    echo "<div class='error'>Zdjecie nie dodane</div>";
+                  }
+                ?>
+              </td>
+
+              <td><?php echo $featured;?></td>
+              <td><?php echo $active;?></td>
+              <td>
+                <a href="#" class="btn-secondary">Update Category</a>
+                <a href="#" class="btn-danger">Delete Category</a>
+              </td>
+            </tr>
+      <?php
+          }
+        }
+        else{
+      ?>
+          <tr>
+            <td colspan="6"><div class="error">Nie dodano kateogrii</div></td>
+          </tr>
+         <?php
+        }
+        ?>
+      <tr>
     </table>
   </div>
 </div>
