@@ -6,12 +6,12 @@
     <br /><br />
 
     <!-- Dodawanie jedzenia -->
-    <form action="#" method="POST">
+    <form action="" method="POST">
       <table class="tbl-30">
         <tr>
           <td>Title:</td>
           <td>
-            <input type="text" name="title" placeholder="Tytuł jedzenia" />
+            <input type="text" name="title" placeholder="Tytul jedzenia" />
           </td>
         </tr>
         <tr>
@@ -36,12 +36,42 @@
           <td>Category:</td>
           <td>
             <select name="category">
-              <option value="1">Pizza</option>
-              <option value="2">Burger</option>
+
+              <?php 
+                // Wybor kategorii na podstawie tego, czy kategoria jest active
+                $sql = "SELECT * FROM categories WHERE active='Yes'";
+                $res = mysqli_query($conn, $sql);
+                
+                $count = mysqli_num_rows($res);
+
+                if($count > 0)
+                {
+                  while($row=mysqli_fetch_assoc($res))
+                  {
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    ?>
+
+                    <option value="<?php echo $id;?>"><?php echo $title; ?></option>
+
+                    <?php
+                  }
+                }
+                else
+                {
+                  ?>
+                  <option value="0">Nie znaleziono kategorii</option>
+                  <?php
+                }
+                
+
+              ?>
             </select>
           </td>
         </tr>
         <tr>
+
+            
           <td>Featured:</td>
           <td>
             <input type="radio" name="featured" value="Yes" /> Yes
@@ -63,6 +93,51 @@
       </table>
     </form>
     <!-- Dodawanie jedzenia się kończy -->
+
+    <?php
+
+      if(isset($_POST['submit']))
+      {
+
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $price = $_POST['price'];
+        $category = $_POST['category'];
+        
+        if(isset($_POST['featured']))
+        [
+          $featured = $_POST['featured'];
+        ]
+        else
+        {
+          // Jesli nie ustawiono featured to domyslnie jest No
+          $featured = "No";
+        }
+
+        if(isset($_POST['active']))
+        {
+          $active = $_POST['active'];
+        }
+        else
+        {
+          // Jesli nie ustawiono active to domyslnie jest No
+          $active = "No";
+        }
+
+        if(isset($_FILES['image']['name']))
+        {
+          $image_name = $_FILES['image']['name'];
+        }
+        else
+        {
+          $image_name = "";
+        }
+
+
+      }
+    ?>
+
+
   </div>
 </div>
 
