@@ -12,11 +12,6 @@
       unset($_SESSION['add']);
     }
 
-    if (isset($_SESSION['upload'])) {
-      echo $_SESSION['upload'];
-      unset($_SESSION['upload']);
-    }
-
     ?>
 
     <br> <br>
@@ -91,10 +86,11 @@
       if(isset($_FILES['image']['name']))
       {
         $image_name = $_FILES['image']['name'];
-        $source_path = $_FILES['image']['tmp_name'];
-        $destination_path = "../images/category/".$image_name;
-
+        
+        // $source_path = $_FILES['image']['tmp_name'];
+        // $destination_path = "../images/category/".$image_name;
         // $upload = move_uploaded_file($source_path, $destination_path);
+
         // if($upload==false)
         // {
         //     $_SESSION['upload'] = "<div class='error'>Nie udalo sie dodac</div>";

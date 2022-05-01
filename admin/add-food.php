@@ -5,8 +5,15 @@
     <h1>Add Food</h1>
     <br /><br />
 
+    <?php
+      if(isset($_SESSION['']))
+      {
+        
+      }
+    ?>
+
     <!-- Dodawanie jedzenia -->
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
       <table class="tbl-30">
         <tr>
           <td>Title:</td>
@@ -105,35 +112,62 @@
         $category = $_POST['category'];
         
         if(isset($_POST['featured']))
-        [
-          $featured = $_POST['featured'];
-        ]
+        {
+            $featured = $_POST['featured'];
+        }
         else
         {
           // Jesli nie ustawiono featured to domyslnie jest No
-          $featured = "No";
+            $featured = "No";
         }
 
         if(isset($_POST['active']))
         {
-          $active = $_POST['active'];
+            $active = $_POST['active'];
         }
         else
         {
           // Jesli nie ustawiono active to domyslnie jest No
-          $active = "No";
+            $active = "No";
         }
 
         if(isset($_FILES['image']['name']))
         {
           $image_name = $_FILES['image']['name'];
+          
+          if ($image_name != "")
+          {
+            $src = $_FILES['image']['tmp_name'];
+            $dst = "../images/".$image_name;
+          }
+
         }
         else
         {
           $image_name = "";
         }
 
+        $sql2 = "INSERT INTO foods SET
+          title = '$title',
+          description = '$description',
+          price = $price,
+          image_name = '$image_name',
+          category_id = $category,
+          featured = '$featured',
+          active = '$active'
+        ";
 
+        $res2 = mysqli_query($conn, $sql2);
+        if($res2 == true)
+        {
+          $_SESSION['add'] = "<div class='success'>Udalo sie dodac jedzenie</div>";
+          header('location:'.SITEURL.'admin/manage-food.php');
+        }
+        else
+        {
+          $_SESSION['add'] = "<div class='error'>Nie udalo sie dodac jedzenia</div>";
+          header('location:'.SITEURL.'admin/manage-food.php');
+        }
       }
     ?>
 
