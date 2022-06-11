@@ -76,6 +76,16 @@ fieldset {
   border-radius: 5px;
 }
 
+.error{
+  padding: 2%;
+  color: red;
+}
+
+.success{
+  padding: 2%;
+  color: green;
+}
+
 /* CSS dla Navbaru */
 .logo {
   width: 9%;

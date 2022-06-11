@@ -1,0 +1,44 @@
+<?php include('config/constants.php'); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Wazne zeby strona byla responsywna -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Restauracja</title>
+  </head>
+  <body>
+    <!-- Sekcja Navbar -->
+    <section class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img
+            src="images/logo.png"
+            alt="Restaurant Logo"
+            class="img-responsive"
+          />
+        </div>
+        <div class="menu text-right">
+          <ul>
+            <li>
+              <a href="<?php echo SITEURL; ?>glowna.php">Strona główna</a>
+            </li>
+            <li>
+              <a href="<?php echo SITEURL; ?>categories.php">Kategorie</a>
+            </li>
+            <li>
+              <a href="<?php echo SITEURL; ?>menu.php">Menu</a>
+            </li>
+            <li>
+              <a href="<?php echo SITEURL; ?>contact.php">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+    </section>
+    <!-- Sekcja Navbar sie konczy -->

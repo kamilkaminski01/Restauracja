@@ -18,25 +18,60 @@
         <th>Contact</th>
         <th>Email</th>
         <th>Address</th>
-        <th>Actions</th>
       </tr>
 
-      <tr class="text-center">
-        <td>1.</td>
-        <td>Pizza</td>
-        <td>20,99</td>
-        <td>1</td>
-        <td>20,99</td>
-        <td>2022-03-30</td>
-        <td>Order</td>
-        <td>Kamil Kaminski</td>
-        <td>123 456 789</td>
-        <td>abc@gmail.com</td>
-        <td>Bialystok</td>
-        <td>
-          <a href="#" class="btn-secondary">Update Order</a>
-        </td>
-      </tr>
+      <?php
+      // Wyswietlenie najnowszego zamowienia po id
+        $sql = "SELECT * FROM orders ORDER BY id DESC";
+        $res = mysqli_query($conn, $sql);
+
+        $count = mysqli_num_rows($res);
+        
+        // Licznik
+        $p = 1;
+
+        if($count > 0)
+        {
+          while($row=mysqli_fetch_assoc($res))
+          {
+            $id = $row['id'];
+            $food = $row['food'];
+            $price = $row['price'];
+            $qty = $row['qty'];
+            $total = $row['total'];
+            $order_date = $row['order_date'];
+            $status = $row['status'];
+            $customer_name = $row['customer_name'];
+            $customer_contact = $row['customer_contact'];
+            $customer_email = $row['customer_email'];
+            $customer_address = $row['customer_address'];
+            ?>
+
+              <tr class="text-center">
+                <td><?php echo $p++ ?>.</td>
+                <td><?php echo $food; ?></td>
+                <td><?php echo $price; ?></td>
+                <td><?php echo $qty; ?></td>
+                <td><?php echo $total; ?></td>
+                <td><?php echo $order_date; ?></td>
+                <td><?php echo $status; ?></td>
+                <td><?php echo $customer_name; ?></td>
+                <td><?php echo $customer_contact; ?></td>
+                <td><?php echo $customer_email; ?></td>
+                <td><?php echo $customer_address; ?></td>
+              </tr>
+
+            <?php
+          }
+
+        }
+        else
+        {
+          echo "<tr><td colspan='12' class='error'>Zamowienie niedostepne</td></tr>";
+        }
+      ?>
+
+
     </table>
   </div>
 </div>
