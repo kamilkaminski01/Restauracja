@@ -3,7 +3,7 @@
     <!-- Sekcja kategorii -->
     <section class="categories-section">
       <div class="container">
-        <div class="food-menu-title">Pizzy</div>
+        <div class="food-menu-title">Kategorie</div>
 
         <?php 
 

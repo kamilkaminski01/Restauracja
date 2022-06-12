@@ -15,11 +15,10 @@
     <section class="navbar">
       <div class="container">
         <div class="logo">
-          <img
-            src="images/logo.png"
-            alt="Restaurant Logo"
-            class="img-responsive"
-          />
+          <a href="<?php echo SITEURL; ?>glowna.php">
+            <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive"/>
+          </a>
+          
         </div>
         <div class="menu text-right">
           <ul>

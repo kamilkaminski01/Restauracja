@@ -23,6 +23,7 @@
     <!-- Sekcja menu -->
     <section class="food-menu">
       <div class="container">
+      <div class="food-menu-title">Menu</div>
 
         <?php
 

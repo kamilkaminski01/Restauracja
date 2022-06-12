@@ -23,7 +23,7 @@
 
       <h1><?php echo $count ?></h1>
       <br>
-      Categries
+      Categories
     </div>
     <div class="col-4 text-center">
 
@@ -35,7 +35,7 @@
 
       <h1><?php echo $count2; ?></h1>
       <br>
-      Foods
+      Food
     </div>
     <div class="col-4 text-center">
 
@@ -61,7 +61,7 @@
 
       <h1><?php echo $total_revenue; ?>zl</h1>
       <br />
-      Revenue
+      Order Amount
     </div>
     <div class="clearfix"></div>
   </div>
